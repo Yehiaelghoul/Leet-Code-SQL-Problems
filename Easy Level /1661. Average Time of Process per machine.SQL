@@ -1,3 +1,4 @@
+/*
 Goal:
 Calculate the average processing time for each machine.
 Processing time = end_timestamp - start_timestamp
