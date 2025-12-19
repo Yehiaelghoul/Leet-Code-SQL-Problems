@@ -15,7 +15,7 @@ The goal is not just to solve problems, but to explain the logic clearly, even f
 
 Every query is written as if I’m teaching SQL to someone seeing it for the first time.
 
-🧭 Repository Structure
+## 🧭 Repository Structure
 
 The repository is organized exactly like the LeetCode platform:
 ```
@@ -35,7 +35,7 @@ The repository is organized exactly like the LeetCode platform:
     └── ...
 ```
     
-Each folder contains:
+## Each folder contains:
 
 The SQL solution
 
@@ -43,7 +43,7 @@ Step-by-step comments inside the query
 
 Clean formatting suitable for learning & revision
 
-✍️ Coding Style & Philosophy
+## ✍️ Coding Style & Philosophy
 
 All SQL solutions follow the same principles:
 
@@ -65,33 +65,33 @@ Example philosophy:
 ```
 This makes the repository useful for:
 
-Beginners learning SQL
+- Beginners learning SQL
 
-Analysts revising fundamentals
+- Analysts revising fundamentals
 
-Recruiters reviewing problem-solving skills
+- Recruiters reviewing problem-solving skills
 
-🧠 Topics Covered
+## 🧠 Topics Covered
 
-Across the problems, you’ll find practical usage of:
+- Across the problems, you’ll find practical usage of:
 
-SELECT, WHERE, GROUP BY, HAVING
+- SELECT, WHERE, GROUP BY, HAVING
 
-JOIN (INNER, LEFT, RIGHT)
+- JOIN (INNER, LEFT, RIGHT)
 
-Subqueries & EXISTS
+- Subqueries & EXISTS
 
-Window Functions (ROW_NUMBER, DENSE_RANK, AVG OVER)
+- Window Functions (ROW_NUMBER, DENSE_RANK, AVG OVER)
 
-Common Table Expressions (CTEs)
+- Common Table Expressions (CTEs)
 
-String & Date functions
+- String & Date functions
 
-Aggregations & conditional logic (CASE WHEN)
+- Aggregations & conditional logic (CASE WHEN)
 
-Data cleaning & validation logic
+- Data cleaning & validation logic
 
-📅 Learning in Public
+## 📅 Learning in Public
 
 This repository is part of my learning journey in Data Analysis & Data Engineering.
 
@@ -103,7 +103,7 @@ The goal is consistency, clarity, and real understanding
 
 If you’re following along — welcome 🙌
 
-🎯 Who This Repository Is For
+##🎯 Who This Repository Is For
 
 This repo is helpful if you are:
 
@@ -117,13 +117,13 @@ Looking for clean, readable SQL examples
 
 Tired of “clever” but unreadable solutions
 
-📌 Final Note
+##📌 Final Note
 
 Good SQL is not just correct SQL — it’s understandable SQL.
 
 That’s the mindset behind every solution here.
 
-If you find this repository useful:
+##If you find this repository useful:
 
 ⭐ Star it
 
