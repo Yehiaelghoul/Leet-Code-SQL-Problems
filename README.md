@@ -18,6 +18,7 @@ Every query is written as if I’m teaching SQL to someone seeing it for the fir
 🧭 Repository Structure
 
 The repository is organized exactly like the LeetCode platform:
+```
 
 📂 LeetCode-SQL
 │
@@ -32,6 +33,7 @@ The repository is organized exactly like the LeetCode platform:
 └── 📁 Hard
     ├── problem_name.sql
     └── ...
+```
     
 Each folder contains:
 
