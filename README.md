@@ -103,7 +103,7 @@ The goal is consistency, clarity, and real understanding
 
 If you’re following along — welcome 🙌
 
-##🎯 Who This Repository Is For
+## 🎯 Who This Repository Is For
 
 This repo is helpful if you are:
 
@@ -117,7 +117,7 @@ Looking for clean, readable SQL examples
 
 Tired of “clever” but unreadable solutions
 
-##📌 Final Note
+## 📌 Final Note
 
 Good SQL is not just correct SQL — it’s understandable SQL.
 
