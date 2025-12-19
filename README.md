@@ -1,108 +1,132 @@
-# 🧠 50 LeetCode SQL Problems — Solutions & Explanations
+📘 LeetCode SQL Solutions – Explained for Everyone
+🚀 About This Repository
 
-Welcome to my repository where I solve **50 curated LeetCode SQL problems** as part of my journey to become a stronger **Data Analyst & Data Engineer**.
+This repository contains my SQL solutions to LeetCode problems, written with a strong focus on:
 
-This repo is designed to:
+✅ Clarity
 
-- Strengthen problem-solving skills  
-- Practice real-world SQL patterns  
-- Build analytical thinking  
-- Show consistent weekly learning  
-- Create a helpful resource for others learning SQL
+✅ Beginner-friendly explanations
 
----
+✅ Real-world SQL thinking
 
-## 📂 Repository Structure
+✅ Readable, well-commented code
 
-Problems are organized by difficulty:
+The goal is not just to solve problems, but to explain the logic clearly, even for readers with no prior programming background.
 
-/Easy
-/Medium
-/Hard
+Every query is written as if I’m teaching SQL to someone seeing it for the first time.
 
+🧭 Repository Structure
 
-Each file contains:
+The repository is organized exactly like the LeetCode platform:
 
-- ✔️ The **problem name**  
-- ✔️ The **original LeetCode link**  
-- ✔️ A clean, optimized **SQL solution**  
-- ✔️ Comments explaining the logic  
-- ✔️ Optional alternative approaches (when relevant)
+📂 LeetCode-SQL
+│
+├── 📁 Easy
+│   ├── problem_name.sql
+│   └── ...
+│
+├── 📁 Medium
+│   ├── problem_name.sql
+│   └── ...
+│
+└── 📁 Hard
+    ├── problem_name.sql
+    └── ...
+    
+Each folder contains:
 
----
+The SQL solution
 
-## 🎯 Skills Covered
+Step-by-step comments inside the query
 
-This challenge includes many SQL concepts:
+Clean formatting suitable for learning & revision
 
-- SELECT, WHERE, GROUP BY, HAVING  
-- JOINs (Inner, Left, Right)  
-- Subqueries  
-- Common Table Expressions (CTEs)  
-- Window Functions  
-- Aggregations & Transformations  
-- Filtering & Data Cleaning Logic  
-- Analytical SQL Techniques  
+✍️ Coding Style & Philosophy
 
----
+All SQL solutions follow the same principles:
 
-## 🔥 Example Problem: *Average Time to Process Tasks*
+🔹 No shortcuts that hurt readability
 
-Below is one of the solutions included in the repository.
+🔹 Every important step is commented
+
+🔹 Logic explained in plain English
+
+🔹 Queries written as if reviewed by a non-technical audience
+
+Example philosophy:
 
 ```sql
-/* 
-Goal:
-Calculate the average processing time for each machine.
-Processing time = end_timestamp - start_timestamp
-We match each 'start' and 'end' activity for the same machine and process.
-*/
 
-SELECT 
-    A2.machine_id,
-    
-    -- Calculate the average time difference between end and start,
-    -- rounded to 3 decimal places
-    ROUND(AVG(A2.timestamp - A1.timestamp), 3) AS processing_time
-
-FROM Activity A1
-JOIN Activity A2
-    ON A1.machine_id = A2.machine_id        -- Must be the same machine
-   AND A1.process_id = A2.process_id        -- Must be the same process instance
-   AND A1.activity_type = 'start'           -- A1 represents the starting event
-   AND A2.activity_type = 'end'             -- A2 represents the ending event
-
--- Group by machine to compute average processing time per machine
-GROUP BY A2.machine_id;
+-- Goal:
+-- Explain WHAT we want before explaining HOW we do it
 
 ```
+This makes the repository useful for:
 
-You can find the fully commented version inside the corresponding folder.
+Beginners learning SQL
 
-🚀 Posting Weekly on LinkedIn
+Analysts revising fundamentals
 
-I’m sharing one SQL problem per week on LinkedIn to build consistency and document my learning journey.
+Recruiters reviewing problem-solving skills
 
-Each post includes:
+🧠 Topics Covered
 
-The problem
+Across the problems, you’ll find practical usage of:
 
-What I learned
+SELECT, WHERE, GROUP BY, HAVING
 
-The GitHub link to the solution
+JOIN (INNER, LEFT, RIGHT)
 
-A short explanation
+Subqueries & EXISTS
 
-Follow the journey here (and feel free to connect!):
+Window Functions (ROW_NUMBER, DENSE_RANK, AVG OVER)
 
-👉 Your LinkedIn Profile URL Here
+Common Table Expressions (CTEs)
 
-🤝 Contributions
+String & Date functions
 
-This repo is mainly for educational purposes, but suggestions are welcome!
-Feel free to open an issue or drop feedback.
+Aggregations & conditional logic (CASE WHEN)
 
-⭐ Support
+Data cleaning & validation logic
 
-If this repository helps you, giving it a ⭐ would truly mean a lot.
-Let’s grow together in our Data Analytics & Engineering journey!
+📅 Learning in Public
+
+This repository is part of my learning journey in Data Analysis & Data Engineering.
+
+I regularly post problem explanations and GitHub links on LinkedIn
+
+Each post focuses on one SQL concept at a time
+
+The goal is consistency, clarity, and real understanding
+
+If you’re following along — welcome 🙌
+
+🎯 Who This Repository Is For
+
+This repo is helpful if you are:
+
+Learning SQL from scratch
+
+Preparing for SQL interviews
+
+Transitioning into Data Analytics
+
+Looking for clean, readable SQL examples
+
+Tired of “clever” but unreadable solutions
+
+📌 Final Note
+
+Good SQL is not just correct SQL — it’s understandable SQL.
+
+That’s the mindset behind every solution here.
+
+If you find this repository useful:
+
+⭐ Star it
+
+🔁 Share it
+
+💬 Connect with me on LinkedIn
+
+Happy querying! 🚀📊
