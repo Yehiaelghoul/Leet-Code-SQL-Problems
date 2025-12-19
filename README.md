@@ -1,4 +1,4 @@
-### 📘 LeetCode SQL Solutions – Explained for Everyone
+# 📘 LeetCode SQL Solutions – Explained for Everyone
 🚀 About This Repository
 
 This repository contains my SQL solutions to LeetCode problems, written with a strong focus on:
