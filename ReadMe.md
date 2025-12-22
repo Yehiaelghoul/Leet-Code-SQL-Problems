@@ -123,7 +123,7 @@ Good SQL is not just correct SQL — it’s understandable SQL.
 
 That’s the mindset behind every solution here.
 
-##If you find this repository useful:
+## If you find this repository useful:
 
 ⭐ Star it
 
@@ -138,4 +138,5 @@ If you found this useful or want to discuss SQL / Data Analysis:
 - 🧠 Focus: SQL · Data Analysis · Power BI · Python
   
 Happy querying! 🚀📊
+
 
