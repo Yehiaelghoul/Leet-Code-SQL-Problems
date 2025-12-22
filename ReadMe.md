@@ -129,6 +129,13 @@ That’s the mindset behind every solution here.
 
 🔁 Share it
 
-💬 Connect with me on LinkedIn
+## 📬 Connect With Me
 
+If you found this useful or want to discuss SQL / Data Analysis:
+
+- 💼 LinkedIn: (https://www.linkedin.com/in/yehia-elghoul-645941192/)
+
+- 🧠 Focus: SQL · Data Analysis · Power BI · Python
+  
 Happy querying! 🚀📊
+
