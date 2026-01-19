@@ -1,24 +1,40 @@
--- Goal:
--- Find employees who:
--- 1) Have a manager assigned
--- 2) Earn less than 30,000
--- 3) Their manager ID does NOT exist in the Employees table
+------------------------------------------------------------
+-- Main Query
+-- Purpose:
+-- Swap seat IDs for students:
+-- - If the seat ID is even → swap with the previous seat
+-- - If the seat ID is odd:
+--     • Swap with the next seat if it exists
+--     • Otherwise, keep the same seat (last student case)
+------------------------------------------------------------
+SELECT
+    --------------------------------------------------------
+    -- Determine the new seat ID after swapping
+    --------------------------------------------------------
+    CASE
+        -- If ID is even, swap with the previous seat
+        WHEN s1.id % 2 = 0 THEN s1.id - 1
 
-SELECT 
-    e.employee_id   -- Employee ID
+        -- If ID is odd and there is NO next seat, keep it as is
+        WHEN s1.id % 2 = 1 AND s2.id IS NULL THEN s1.id
 
-FROM Employees e
+        -- If ID is odd and a next seat exists, swap with next
+        ELSE s1.id + 1
+    END AS id,
 
-WHERE 
-    e.manager_id IS NOT NULL        -- Employee has a manager
-    AND e.salary < 30000            -- Salary is less than 30,000
+    s1.student    -- Student name
+FROM Seat s1
 
-    -- Check that the manager record does NOT exist
-    AND NOT EXISTS (
-        SELECT 1
-        FROM Employees m
-        WHERE m.employee_id = e.manager_id
-    )
+------------------------------------------------------------
+-- LEFT JOIN:
+-- Purpose:
+-- Check whether the next seat exists (id + 1)
+-- LEFT JOIN ensures the last row is still kept
+------------------------------------------------------------
+LEFT JOIN Seat s2
+    ON s1.id + 1 = s2.id
 
--- Sort result by employee ID
-ORDER BY e.employee_id;
+------------------------------------------------------------
+-- Sort results by the new seat ID
+------------------------------------------------------------
+ORDER BY id;
