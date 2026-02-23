@@ -1,28 +1,35 @@
--- Goal:
--- Swap students in adjacent seats:
--- - Even ID → swap with previous seat
--- - Odd ID → swap with next seat
--- - Last odd seat with no next seat stays the same
+-- CTE to count ratings per user
+WITH UserRatingCount AS (
+    SELECT 
+        MR.user_id,
+        COUNT(*) AS rating_count
+    FROM MovieRating MR
+    GROUP BY MR.user_id
+),
+TopUser AS (
+    SELECT TOP 1 U.name AS results
+    FROM UserRatingCount UR
+    JOIN Users U ON UR.user_id = U.user_id
+    ORDER BY UR.rating_count DESC, U.name ASC
+),
 
-SELECT 
-    CASE
-        WHEN s1.id % 2 = 0 
-            THEN s1.id - 1        -- Even ID: move to previous seat
+-- CTE to calculate average rating per movie in Feb 2020
+MovieAvgRatingFeb AS (
+    SELECT 
+        MR.movie_id,
+        AVG(MR.rating * 1.0) AS avg_rating
+    FROM MovieRating MR
+    WHERE MR.created_at >= '2020-02-01' AND MR.created_at < '2020-03-01'
+    GROUP BY MR.movie_id
+),
+TopMovie AS (
+    SELECT TOP 1 M.title AS results
+    FROM MovieAvgRatingFeb MF
+    JOIN Movies M ON MF.movie_id = M.movie_id
+    ORDER BY MF.avg_rating DESC, M.title ASC
+)
 
-        WHEN s1.id % 2 = 1 
-             AND s2.id IS NULL 
-            THEN s1.id            -- Odd ID with no next seat: stay same
-
-        ELSE s1.id + 1             -- Odd ID with next seat: move forward
-    END AS id,
-
-    s1.student                     -- Student name
-
-FROM Seat s1
-
--- Join to check if a next seat exists
-LEFT JOIN Seat s2 
-    ON s1.id + 1 = s2.id
-
--- Sort by the new seat ID
-ORDER BY id;
+-- Final result
+SELECT results FROM TopUser
+UNION ALL
+SELECT results FROM TopMovie;
